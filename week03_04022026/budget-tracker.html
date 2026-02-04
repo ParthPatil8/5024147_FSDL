@@ -4,39 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="budget-tracker.css">
+    <style>
+      /* Small helper to reintroduce jumbotron-style for Bootstrap 5 */
+      .jumbotron { background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>💰 Budget Tracker</h1>
-            <p class="subtitle">Manage your expenses wisely</p>
-        </header>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Budget Tracker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-4">
+      <!-- Jumbotron/Hero -->
+      <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+        <div class="container-fluid py-2">
+          <h1 class="display-5">💰 Budget Tracker</h1>
+          <p class="lead">Manage your expenses wisely</p>
+          <hr class="my-2">
+          <p>Track spending, categorize expenses, and stay on budget.</p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
 
         <!-- Summary Section -->
-        <section class="summary">
-            <div class="summary-item income">
-                <h3>Income</h3>
-                <p class="amount">$5,000</p>
+        <section class="summary row g-3">
+            <div class="summary-item income col-md-4">
+                <div class="p-3 rounded-3 text-center">
+                    <h3>Income</h3>
+                    <p class="amount">$5,000</p>
+                </div>
             </div>
-            <div class="summary-item expense">
-                <h3>Expenses</h3>
-                <p class="amount">$1,200</p>
+            <div class="summary-item expense col-md-4">
+                <div class="p-3 rounded-3 text-center">
+                    <h3>Expenses</h3>
+                    <p class="amount">$1,200</p>
+                </div>
             </div>
-            <div class="summary-item balance">
-                <h3>Balance</h3>
-                <p class="amount">$3,800</p>
+            <div class="summary-item balance col-md-4">
+                <div class="p-3 rounded-3 text-center">
+                    <h3>Balance</h3>
+                    <p class="amount">$3,800</p>
+                </div>
             </div>
         </section>
 
         <!-- Add Expense Form -->
         <section class="form-section">
             <h2>Add New Expense</h2>
-            <form class="expense-form">
-                <div class="form-group">
+            <form class="expense-form row g-3">
+                <div class="form-group col-md-6">
                     <label for="category">Category:</label>
-                    <select id="category" name="category" required>
+                    <select id="category" name="category" class="form-select" required>
                         <option value="">Select a category</option>
                         <option value="food">Food & Dining</option>
                         <option value="transport">Transport</option>
@@ -47,22 +89,24 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="amount">Amount:</label>
-                    <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" required>
+                    <input type="number" id="amount" name="amount" class="form-control" placeholder="0.00" step="0.01" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="description">Description:</label>
-                    <input type="text" id="description" name="description" placeholder="Enter expense details">
+                    <input type="text" id="description" name="description" class="form-control" placeholder="Enter expense details">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date" class="form-control" required>
                 </div>
 
-                <button type="submit" class="btn-submit">Add Expense</button>
+                <div class="col-md-6 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">Add Expense</button>
+                </div>
             </form>
         </section>
 
@@ -96,7 +140,7 @@
         <!-- Recent Expenses Table -->
         <section class="table-section">
             <h2>Recent Expenses</h2>
-            <table class="expense-table">
+            <table class="table table-striped table-hover expense-table">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -112,35 +156,35 @@
                         <td><span class="badge food">Food</span></td>
                         <td>Coffee & Lunch</td>
                         <td>$25.50</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     <tr>
                         <td>2026-01-27</td>
                         <td><span class="badge transport">Transport</span></td>
                         <td>Gas Fill-up</td>
                         <td>$45.00</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     <tr>
                         <td>2026-01-26</td>
                         <td><span class="badge utilities">Utilities</span></td>
                         <td>Electricity Bill</td>
                         <td>$120.00</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     <tr>
                         <td>2026-01-25</td>
                         <td><span class="badge entertainment">Entertainment</span></td>
                         <td>Movie Tickets</td>
                         <td>$30.00</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                     <tr>
                         <td>2026-01-24</td>
                         <td><span class="badge shopping">Shopping</span></td>
                         <td>Grocery Store</td>
                         <td>$85.50</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn btn-danger btn-sm">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -151,5 +195,8 @@
             <p>&copy; 2026 Budget Tracker. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
