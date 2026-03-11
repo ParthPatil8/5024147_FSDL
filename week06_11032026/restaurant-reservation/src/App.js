@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-const initialTables = [
+const tables = [
   { id: 1, seats: 2 },
   { id: 2, seats: 4 },
   { id: 3, seats: 6 },
@@ -10,112 +10,80 @@ const initialTables = [
   { id: 6, seats: 8 }
 ];
 
-function App() {
-  const [tables] = useState(initialTables);
-  const [selectedTable, setSelectedTable] = useState(null);
-  const [name, setName] = useState("");
-  const [guests, setGuests] = useState("");
-  const [time, setTime] = useState("");
+export default function App() {
   const [reservations, setReservations] = useState([]);
+  const [selected, setSelected] = useState(null);
+  const [name, setName] = useState("");
 
-  useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem("reservations"));
-    if (saved) setReservations(saved);
-  }, []);
+  const reserve = () => {
+    if (!name || !selected) return alert("Enter name and select table");
 
-  useEffect(() => {
-    localStorage.setItem("reservations", JSON.stringify(reservations));
-  }, [reservations]);
-
-  const reserveTable = () => {
-    if (!selectedTable || !name || !guests || !time) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    const newReservation = {
-      table: selectedTable,
-      name,
-      guests,
-      time
-    };
-
-    setReservations([...reservations, newReservation]);
-    setSelectedTable(null);
+    setReservations([...reservations, { table: selected, name }]);
+    setSelected(null);
     setName("");
-    setGuests("");
-    setTime("");
   };
 
-  const cancelReservation = (tableId) => {
-    const updated = reservations.filter(r => r.table !== tableId);
-    setReservations(updated);
+  const cancel = (tableId) => {
+    setReservations(reservations.filter(r => r.table !== tableId));
   };
 
-  const isReserved = (tableId) => {
-    return reservations.some(r => r.table === tableId);
-  };
+  const reservedTables = reservations.map(r => r.table);
 
   return (
-    <div className="container">
-      <h1>🍽 Restaurant Table Reservation</h1>
+    <div className="app">
 
-      <div className="form">
-        <input
-          placeholder="Customer Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      <h1 className="title">🍽 Restaurant Table Reservation</h1>
 
-        <input
-          type="number"
-          placeholder="Guests"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
-        />
+      <div className="layout">
 
-        <input
-          type="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
+        {/* TABLE GRID */}
 
-        <button onClick={reserveTable}>Reserve Table</button>
+        <div className="tables">
+
+          {tables.map(t => (
+            <div
+              key={t.id}
+              className={`table 
+              ${reservedTables.includes(t.id) ? "reserved" : ""}
+              ${selected === t.id ? "selected" : ""}`}
+              onClick={() =>
+                !reservedTables.includes(t.id) && setSelected(t.id)
+              }
+            >
+              <h3>Table {t.id}</h3>
+              <p>{t.seats} Seats</p>
+            </div>
+          ))}
+
+        </div>
+
+        {/* BOOKING PANEL */}
+
+        <div className="panel">
+
+          <h2>Reserve Table</h2>
+
+          <input
+            placeholder="Customer Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <button onClick={reserve}>Book Table</button>
+
+          <h2>Reservations</h2>
+
+          {reservations.map((r, i) => (
+            <div className="reservation" key={i}>
+              Table {r.table} — {r.name}
+              <button onClick={() => cancel(r.table)}>Cancel</button>
+            </div>
+          ))}
+
+        </div>
+
       </div>
 
-      <h2>Select a Table</h2>
-
-      <div className="tables">
-        {tables.map((table) => (
-          <div
-            key={table.id}
-            className={`table ${
-              isReserved(table.id) ? "reserved" : ""
-            } ${selectedTable === table.id ? "selected" : ""}`}
-            onClick={() =>
-              !isReserved(table.id) && setSelectedTable(table.id)
-            }
-          >
-            <h3>Table {table.id}</h3>
-            <p>{table.seats} Seats</p>
-          </div>
-        ))}
-      </div>
-
-      <h2>Reservations</h2>
-
-      <ul className="reservation-list">
-        {reservations.map((r, index) => (
-          <li key={index}>
-            Table {r.table} — {r.name} — {r.guests} Guests — {r.time}
-            <button onClick={() => cancelReservation(r.table)}>
-              Cancel
-            </button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
-
-export default App;
