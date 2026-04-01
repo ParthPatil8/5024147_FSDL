@@ -5,12 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World - AngularJS</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .greeting {
+            margin: 20px 0;
+            font-size: 1.3em;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .expression {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: #2d3748;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body ng-controller="myCtrl">
-    <h1>Hello World with AngularJS</h1>
-    <p>Enter your name: <input type="text" ng-model="name"></p>
-    <p>Hello {{name}}!</p>
-    <p>Expression example: {{ "Welcome, " + name + "!" }}</p>
+    <div class="container">
+        <h1>Hello World with AngularJS</h1>
+
+        <div class="input-group">
+            <label for="nameInput">Enter your name:</label>
+            <input type="text" id="nameInput" ng-model="name" placeholder="Type your name here...">
+        </div>
+
+        <div class="greeting">
+            Hello {{name}}!
+        </div>
+
+        <div class="expression">
+            Expression example: {{ "Welcome, " + name + "!" }}
+        </div>
+
+        <div class="badge">AngularJS Demo</div>
+    </div>
 
     <script>
         var app = angular.module('myApp', []);
