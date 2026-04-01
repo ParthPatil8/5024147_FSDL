@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records - Government Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Government Student Records Portal</h1>
+            <p>Official Student Management System</p>
+        </div>
+    </header>
+
+    <main class="container" ng-controller="studentCtrl">
+        <div class="form-section">
+            <h2>Add/Edit Student Record</h2>
+            <form name="studentForm" ng-submit="submitStudent()" novalidate>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" ng-model="student.name" required ng-minlength="2" class="form-control">
+                            <div class="error" ng-show="studentForm.name.$touched && studentForm.name.$invalid">
+                                Name is required and must be at least 2 characters.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" ng-model="student.age" required min="1" max="100" class="form-control">
+                            <div class="error" ng-show="studentForm.age.$touched && studentForm.age.$invalid">
+                                Age is required and must be between 1 and 100.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" ng-model="student.email" required class="form-control">
+                            <div class="error" ng-show="studentForm.email.$touched && studentForm.email.$invalid">
+                                Valid email address is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn" ng-disabled="studentForm.$invalid">Submit Record</button>
+                <button type="button" class="btn btn-secondary" ng-show="editMode" ng-click="cancelEdit()">Cancel</button>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h2>Student Records</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Age</th>
+                        <th>Email Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="s in students">
+                        <td>{{s.name}}</td>
+                        <td>{{s.age}}</td>
+                        <td>{{s.email}}</td>
+                        <td>
+                            <button class="action-btn" ng-click="editStudent(s)">Edit</button>
+                            <button class="action-btn delete-btn" ng-click="deleteStudent($index)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p ng-show="students.length === 0" class="text-muted">No student records found.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Government Student Records Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
