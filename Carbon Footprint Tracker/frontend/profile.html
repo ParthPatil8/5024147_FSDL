@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile | Carbon Ethereal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#6bff8f",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low": "#091328",
+                    "on-tertiary-container": "#005a3c",
+                    "on-primary-fixed-variant": "#006a2d",
+                    "on-secondary": "#005f2e",
+                    "primary-dim": "#5bf083",
+                    "surface-tint": "#6bff8f",
+                    "secondary": "#6dfe9c",
+                    "primary-container": "#0abc56",
+                    "outline": "#6d758c",
+                    "surface-container": "#0f1930",
+                    "on-surface-variant": "#a3aac4",
+                    "on-tertiary-fixed-variant": "#006544",
+                    "tertiary-fixed": "#69f6b8",
+                    "surface-bright": "#1f2b49",
+                    "tertiary-fixed-dim": "#58e7ab",
+                    "primary-fixed-dim": "#5bf083",
+                    "tertiary-container": "#69f6b8",
+                    "primary-fixed": "#6bff8f",
+                    "on-secondary-container": "#e3ffe4",
+                    "on-primary": "#005f28",
+                    "secondary-fixed": "#6dfe9c",
+                    "secondary-fixed-dim": "#5def8f",
+                    "error-dim": "#d53d18",
+                    "surface-container-high": "#141f38",
+                    "error": "#ff7351",
+                    "on-tertiary": "#006443",
+                    "on-error": "#450900",
+                    "error-container": "#b92902",
+                    "background": "#060e20",
+                    "surface-dim": "#060e20",
+                    "secondary-container": "#006d36",
+                    "on-surface": "#dee5ff",
+                    "surface-container-highest": "#192540",
+                    "on-secondary-fixed-variant": "#006a34",
+                    "on-error-container": "#ffd2c8",
+                    "surface-variant": "#192540",
+                    "inverse-surface": "#faf8ff",
+                    "secondary-dim": "#5def8f",
+                    "on-primary-container": "#002c0f",
+                    "on-tertiary-fixed": "#00452d",
+                    "on-background": "#dee5ff",
+                    "on-secondary-fixed": "#004a22",
+                    "on-primary-fixed": "#004a1d",
+                    "surface": "#060e20",
+                    "tertiary-dim": "#58e7ab",
+                    "tertiary": "#9bffce",
+                    "inverse-primary": "#006e2f",
+                    "outline-variant": "#40485d",
+                    "inverse-on-surface": "#4d556b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #060e20; color: #dee5ff; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(24px); }
+        .ghost-border { outline: 1px solid rgba(109, 117, 140, 0.15); }
+        .luminous-glow { box-shadow: 0 0 20px rgba(107, 255, 143, 0.15); }
+        .sidebar-gradient { background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05)); }
+        .active-nav-bg { background: linear-gradient(to right, rgba(107, 255, 143, 0.2), transparent); }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#060e20] font-['Manrope'] font-medium shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-50 flex flex-col py-8 space-y-6 sidebar-gradient">
+<div class="px-8 mb-4">
+<h1 class="text-xl font-bold text-[#6bff8f]">Carbon Ethereal</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mt-1">Luminous Stewardship</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center px-8 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="dashboard_new.html">
+<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center px-8 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="analytics.html">
+<span class="material-symbols-outlined mr-4" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center px-8 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="insights.html">
+<span class="material-symbols-outlined mr-4" data-icon="insights">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center px-8 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="simulation.html">
+<span class="material-symbols-outlined mr-4" data-icon="biotech">biotech</span>
+<span>Simulations</span>
+</a>
+<a class="flex items-center px-8 py-3 active-nav-bg text-[#6bff8f] border-l-4 border-[#6bff8f] font-bold transition-colors ease-out duration-200" href="profile.html">
+<span class="material-symbols-outlined mr-4" data-icon="account_circle">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 px-4 rounded-full bg-primary text-on-primary font-bold text-sm flex items-center justify-center gap-2 luminous-glow active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+                Recalculate Impact
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-12 min-h-screen relative">
+<!-- Background Ambient Light -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Top Header Area -->
+<header class="flex justify-between items-center mb-16 relative z-10">
+<div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-on-background">User Profile</h2>
+<p class="text-on-surface-variant font-body mt-2">Manage your digital ecological identity</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="p-3 rounded-full glass ghost-border text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-3 rounded-full glass ghost-border text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Profile Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 relative z-10">
+<!-- Profile Card (Large) -->
+<div class="lg:col-span-2 glass rounded-2xl p-12 flex flex-col md:flex-row gap-12 items-center md:items-start ghost-border">
+<div class="relative h-32 w-32 shrink-0">
+<img alt="User avatar" class="w-full h-full rounded-2xl object-cover border-2 border-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYfh4_-owC1cY5ct6luBGK2ZsWH3C4dkcqxL_9W9OZn-Em12S31baVHX3eNlSJ5WF6RZdgWQ4-oYc9AOxiFIaeDkOyTkYOCiPch0Ruhbpx1VDQyPSBdyAlZbT63I2213GRfw9I9qduKq2sNPBCRqnHPnfq5GceZOwXzC8A8UEkJF061hj_6G9YvsMAelNLR0a4nrEb_rsYazXV7GIWBQjlhYKz2QNk0dLvItAS4pMJ5ZgNH8znNQbQ3iRqPpr7kJ_OSzh22dj9-9Nh"/>
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                VERIFIED
+                            </div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h3 id="user-id-display" class="text-5xl font-black font-headline text-primary mb-2 tracking-tighter">User #0</h3>
+<p class="text-lg text-slate-400 font-body mb-6">Carbon Stewardship: <span class="text-secondary font-bold">Elite Tier</span></p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="bg-surface-container-highest px-4 py-2 rounded-md ghost-border flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="verified_user">verified_user</span>
+<span class="text-xs font-semibold tracking-wider uppercase opacity-80">Premium Active</span>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 rounded-md ghost-border flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-semibold tracking-wider uppercase opacity-80">Joined Jan 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Preference Card -->
+<div class="glass rounded-lg p-8 ghost-border hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<h4 class="text-xl font-bold font-headline">Measurement Units</h4>
+</div>
+<div class="space-y-4">
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-highest ghost-border cursor-pointer hover:border-primary/50 transition-all">
+<div class="flex flex-col">
+<span class="font-bold">Metric System</span>
+<span class="text-xs text-slate-500">kg CO2e, Tonnes, Liters</span>
+</div>
+<input checked="" class="w-5 h-5 text-primary bg-transparent border-primary/30 focus:ring-primary focus:ring-offset-0" name="units" type="radio"/>
+</label>
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low ghost-border cursor-pointer hover:border-primary/50 transition-all">
+<div class="flex flex-col">
+<span class="font-bold">Imperial System</span>
+<span class="text-xs text-slate-500">lb CO2e, Tons, Gallons</span>
+</div>
+<input class="w-5 h-5 text-primary bg-transparent border-primary/30 focus:ring-primary focus:ring-offset-0" name="units" type="radio"/>
+</label>
+</div>
+</div>
+<!-- Notification Card -->
+<div class="glass rounded-lg p-8 ghost-border hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<h4 class="text-xl font-bold font-headline">Notifications</h4>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-2">
+<span class="font-medium text-slate-300">Threshold Alerts</span>
+<button class="w-12 h-6 rounded-full bg-primary relative flex items-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-on-primary absolute right-1"></div>
+</button>
+</div>
+<div class="flex items-center justify-between py-2">
+<span class="font-medium text-slate-300">Weekly Summaries</span>
+<button class="w-12 h-6 rounded-full bg-primary relative flex items-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-on-primary absolute right-1"></div>
+</button>
+</div>
+<div class="flex items-center justify-between py-2">
+<span class="font-medium text-slate-300">Device Sync Errors</span>
+<button class="w-12 h-6 rounded-full bg-slate-700 relative flex items-center transition-colors">
+<div class="w-4 h-4 rounded-full bg-slate-400 absolute left-1"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Actions (Bento Small) -->
+<section class="col-span-12 lg:col-span-4 space-y-8 relative z-10">
+<!-- Session Status -->
+<div class="glass rounded-lg p-8 ghost-border text-center">
+<div class="mb-6 inline-block p-4 rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-4xl" data-icon="security" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h4 class="text-lg font-bold font-headline mb-2">Session Integrity</h4>
+<p class="text-sm text-slate-400 mb-6">Your session is secured with end-to-end encryption. All local data is temporary.</p>
+<div class="flex items-center justify-center gap-2 text-xs font-mono text-primary bg-primary/5 py-2 rounded">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        AES-256 ENCRYPTION ACTIVE
+                    </div>
+</div>
+<!-- Account Management -->
+<div class="glass rounded-lg p-8 ghost-border space-y-4">
+<button class="w-full py-4 px-6 rounded-xl bg-surface-container-high text-on-surface font-bold flex items-center justify-between hover:bg-surface-bright transition-colors group">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="cloud_sync">cloud_sync</span>
+                            Cloud Synchronization
+                        </span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full py-4 px-6 rounded-xl bg-surface-container-high text-on-surface font-bold flex items-center justify-between hover:bg-surface-bright transition-colors group">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="history">history</span>
+                            Security History
+                        </span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- LOGOUT ACTION -->
+<div class="pt-4">
+<button class="w-full group relative py-6 rounded-2xl bg-error-container text-white font-black font-headline text-xl overflow-hidden shadow-[0_0_30px_rgba(185,41,2,0.3)] hover:shadow-[0_0_50px_rgba(185,41,2,0.5)] transition-all duration-500 active:scale-95" onclick="logout()">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+<div class="flex items-center justify-center gap-4">
+<span class="material-symbols-outlined text-3xl" data-icon="logout">logout</span>
+                            Logout Session
+                        </div>
+</button>
+<p class="text-[10px] text-center text-slate-500 mt-4 font-label tracking-widest uppercase">Encryption keys will be purged on exit</p>
+</div>
+</section>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="mt-20 border-t border-white/10 w-full py-12 flex flex-col items-center justify-center gap-4 relative z-10">
+<div class="flex gap-8">
+<a class="text-slate-500 font-['Inter'] text-xs tracking-wider hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a>
+<a class="text-slate-500 font-['Inter'] text-xs tracking-wider hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a>
+<a class="text-slate-500 font-['Inter'] text-xs tracking-wider hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Methodology</a>
+</div>
+<p class="text-[#6bff8f] font-['Inter'] text-xs tracking-wider opacity-60">© 2024 Carbon Ethereal. Powered by Luminous Stewardship.</p>
+</footer>
+</main>
+<!-- Contextual Check - Session Banner -->
+<div class="fixed bottom-8 right-8 z-[100] flex items-center gap-3 glass px-6 py-4 rounded-full border border-primary/20 animate-bounce-slow">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="text-sm font-bold text-primary tracking-tight">ENCRYPTED TUNNEL ACTIVE</span>
+</div>
+
+<script>
+console.log("PAGE LOADED");
+
+const userId = localStorage.getItem("user_id");
+
+if (!userId) {
+    window.location.href = "login.html";
+} else {
+    document.getElementById('user-id-display').innerText = `User #${userId}`;
+}
+
+function logout() {
+    console.log("LOGOUT TRIGGERED");
+    localStorage.clear();
+    window.location.href = 'login.html';
+}
+</script>
+</body></html>

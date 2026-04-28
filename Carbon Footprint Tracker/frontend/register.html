@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Ethereal | Begin Your Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#5def8f",
+                      "inverse-on-surface": "#4d556b",
+                      "on-secondary": "#005f2e",
+                      "outline-variant": "#40485d",
+                      "error-container": "#b92902",
+                      "on-background": "#dee5ff",
+                      "on-tertiary-fixed-variant": "#006544",
+                      "tertiary-fixed-dim": "#58e7ab",
+                      "surface-container": "#0f1930",
+                      "secondary-dim": "#5def8f",
+                      "on-primary-container": "#002c0f",
+                      "inverse-primary": "#006e2f",
+                      "on-surface-variant": "#a3aac4",
+                      "surface-container-highest": "#192540",
+                      "on-tertiary-container": "#005a3c",
+                      "on-tertiary-fixed": "#00452d",
+                      "tertiary-container": "#69f6b8",
+                      "tertiary-fixed": "#69f6b8",
+                      "primary-fixed-dim": "#5bf083",
+                      "on-primary": "#005f28",
+                      "tertiary-dim": "#58e7ab",
+                      "error": "#ff7351",
+                      "background": "#060e20",
+                      "secondary": "#6dfe9c",
+                      "surface-bright": "#1f2b49",
+                      "surface-container-low": "#091328",
+                      "surface": "#060e20",
+                      "on-primary-fixed": "#004a1d",
+                      "on-primary-fixed-variant": "#006a2d",
+                      "surface-container-high": "#141f38",
+                      "primary-fixed": "#6bff8f",
+                      "on-error-container": "#ffd2c8",
+                      "outline": "#6d758c",
+                      "on-secondary-fixed-variant": "#006a34",
+                      "secondary-fixed": "#6dfe9c",
+                      "surface-dim": "#060e20",
+                      "on-tertiary": "#006443",
+                      "primary": "#6bff8f",
+                      "surface-variant": "#192540",
+                      "tertiary": "#9bffce",
+                      "on-secondary-container": "#e3ffe4",
+                      "on-surface": "#dee5ff",
+                      "inverse-surface": "#faf8ff",
+                      "secondary-container": "#006d36",
+                      "error-dim": "#d53d18",
+                      "on-error": "#450900",
+                      "primary-container": "#0abc56",
+                      "surface-tint": "#6bff8f",
+                      "on-secondary-fixed": "#004a22",
+                      "surface-container-lowest": "#000000",
+                      "primary-dim": "#5bf083"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(107, 255, 143, 0.3);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ghost-border:focus-within {
+            outline: 1px solid rgba(107, 255, 143, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Hero Background Texture -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-tertiary/10 blur-[100px]"></div>
+</div>
+<!-- Top Navigation Bar (Shared Shell) -->
+<header class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-8 py-6">
+<div class="text-2xl font-headline font-extrabold text-primary drop-shadow-[0_0_10px_rgba(107,255,143,0.3)] tracking-tight">
+            Carbon Ethereal
+        </div>
+<div class="hidden md:flex items-center gap-8 text-slate-400 font-label text-sm uppercase tracking-widest">
+<a class="hover:text-primary transition-colors duration-300" href="#">Methodology</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Impact</a>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">help_outline</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-[1200px] px-6 py-20 flex flex-col items-center">
+<div class="glass-card w-full max-w-md p-10 rounded-2xl border border-white/5 flex flex-col gap-8 shadow-2xl">
+<div class="text-center">
+<h1 class="font-headline text-4xl font-extrabold tracking-tight mb-2">Initiate Stewardship</h1>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Enter your credentials to begin tracking your digital carbon footprint with precision.</p>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Username Input -->
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.2em] font-semibold text-primary/80 ml-1" for="username">Universal Identity</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
+<input class="w-full bg-surface-container-highest border-none ghost-border rounded-lg py-4 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-0 focus:outline-none transition-all duration-300" id="username" placeholder="username" type="text"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-2">
+<label class="text-xs uppercase tracking-[0.2em] font-semibold text-primary/80 ml-1" for="password">Access Fragment</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">lock</span>
+<input class="w-full bg-surface-container-highest border-none ghost-border rounded-lg py-4 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-0 focus:outline-none transition-all duration-300" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Call to Action -->
+<button class="glow-button w-full bg-primary text-on-primary font-headline font-extrabold text-lg py-4 rounded-full scale-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-2" onclick="register()">
+                    Register
+                </button>
+</div>
+<div class="flex flex-col gap-4 items-center">
+<div class="w-full h-px bg-white/5 relative">
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-low px-4 text-[10px] text-on-surface-variant uppercase tracking-widest font-semibold">Or Authenticate With</span>
+</div>
+<div class="flex gap-4 w-full">
+<button class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-white/5 hover:bg-white/5 transition-colors duration-300">
+<img alt="Google" class="w-5 h-5 opacity-80" data-alt="Small colorful Google G logo icon for social login button" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_qniBOe67UN2t-O1HYuHOdGYM129sWjKyRQrJWtVVnIBVM-tbbR1QU_dqbc-YJT2ngzR5JnrPiL7NDeK1MKf_5eoFZe4La-79BW4SmBFo8HSBI4ce5fCSQf0Dx9TTgPrT--WtErckYKb-Yzxz2P7ewJG7ekxanHyo1X231lH4S7Hwh6-MsMIEL-V7aLRLrtejxdftAIJg_8Dbe4ySHDa7eEHOttTIQ5w88Jl9EKGy4ZBCRuZcNqbfSD-x8_jxcJ8f6hl_F78enX3Y"/>
+<span class="text-xs font-semibold tracking-wider">Cloud</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-white/5 hover:bg-white/5 transition-colors duration-300">
+<span class="material-symbols-outlined text-lg">terminal</span>
+<span class="text-xs font-semibold tracking-wider">GitHub</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-4">
+<p class="text-on-surface-variant text-xs">
+                    Already part of the ecosystem? 
+                    <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="login.html">Access Portal</a>
+</p>
+</div>
+</div>
+<!-- Secondary Visual Insight (Bento-style tease) -->
+<div class="mt-12 w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none">
+<div class="bg-surface-container-high/40 p-6 rounded-2xl flex flex-col gap-4 border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Real-time Capture</p>
+<div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-high/40 p-6 rounded-2xl flex flex-col gap-4 border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Luminous Analytics</p>
+<div class="flex gap-1 items-end h-6">
+<div class="w-1 bg-primary/40 h-2"></div>
+<div class="w-1 bg-primary/60 h-4"></div>
+<div class="w-1 bg-primary h-6"></div>
+<div class="w-1 bg-primary/80 h-3"></div>
+</div>
+</div>
+<div class="bg-surface-container-high/40 p-6 rounded-2xl flex flex-col gap-4 border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Ethical Assurance</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-surface bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border border-surface bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full border border-surface bg-slate-500"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Shell) -->
+<footer class="fixed bottom-0 w-full z-50 bg-transparent flex flex-col md:flex-row justify-between items-center px-8 py-8 gap-4">
+<div class="font-body text-xs tracking-wide leading-relaxed text-slate-500">
+            © 2024 Carbon Ethereal. Luminous Stewardship.
+        </div>
+<div class="flex gap-6 font-body text-xs tracking-wide text-slate-500">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Carbon Methodology</a>
+</div>
+</footer>
+<script>
+async function register() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const res = await fetch("http://127.0.0.1:5000/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+    });
+
+    const data = await res.json();
+
+    if (data.message) {
+        alert("Registered successfully!");
+        window.location.href = "./login.html";
+    } else {
+        alert("User already exists");
+    }
+}
+</script>
+</body></html>

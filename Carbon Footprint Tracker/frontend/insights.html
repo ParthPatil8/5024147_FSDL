@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insights - Carbon Ethereal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#6bff8f",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-low": "#091328",
+                    "on-tertiary-container": "#005a3c",
+                    "on-primary-fixed-variant": "#006a2d",
+                    "on-secondary": "#005f2e",
+                    "primary-dim": "#5bf083",
+                    "surface-tint": "#6bff8f",
+                    "secondary": "#6dfe9c",
+                    "primary-container": "#0abc56",
+                    "outline": "#6d758c",
+                    "surface-container": "#0f1930",
+                    "on-surface-variant": "#a3aac4",
+                    "on-tertiary-fixed-variant": "#006544",
+                    "tertiary-fixed": "#69f6b8",
+                    "surface-bright": "#1f2b49",
+                    "tertiary-fixed-dim": "#58e7ab",
+                    "primary-fixed-dim": "#5bf083",
+                    "tertiary-container": "#69f6b8",
+                    "primary-fixed": "#6bff8f",
+                    "on-secondary-container": "#e3ffe4",
+                    "on-primary": "#005f28",
+                    "secondary-fixed": "#6dfe9c",
+                    "secondary-fixed-dim": "#5def8f",
+                    "error-dim": "#d53d18",
+                    "surface-container-high": "#141f38",
+                    "error": "#ff7351",
+                    "on-tertiary": "#006443",
+                    "on-error": "#450900",
+                    "error-container": "#b92902",
+                    "background": "#060e20",
+                    "surface-dim": "#060e20",
+                    "secondary-container": "#006d36",
+                    "on-surface": "#dee5ff",
+                    "surface-container-highest": "#192540",
+                    "on-secondary-fixed-variant": "#006a34",
+                    "on-error-container": "#ffd2c8",
+                    "surface-variant": "#192540",
+                    "inverse-surface": "#faf8ff",
+                    "secondary-dim": "#5def8f",
+                    "on-primary-container": "#002c0f",
+                    "on-tertiary-fixed": "#00452d",
+                    "on-background": "#dee5ff",
+                    "on-secondary-fixed": "#004a22",
+                    "on-primary-fixed": "#004a1d",
+                    "surface": "#060e20",
+                    "tertiary-dim": "#58e7ab",
+                    "tertiary": "#9bffce",
+                    "inverse-primary": "#006e2f",
+                    "outline-variant": "#40485d",
+                    "inverse-on-surface": "#4d556b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(107, 255, 143, 0.05);
+        }
+        .text-shadow-glow {
+            text-shadow: 0 0 10px rgba(107, 255, 143, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#060e20] shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-40 hidden md:flex flex-col py-8 space-y-6">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-[#6bff8f] font-headline tracking-tight">Carbon Ethereal</h1>
+<p class="text-slate-500 text-xs font-label uppercase tracking-widest mt-1">Luminous Stewardship</p>
+</div>
+<nav class="flex-1 space-y-2 px-4">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl font-label group" href="dashboard_new.html">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl font-label group" href="analytics.html">
+<span class="material-symbols-outlined group-hover:text-primary">analytics</span>
+<span>Analytics</span>
+</a>
+<!-- Active State: Insights -->
+<a class="flex items-center gap-4 px-4 py-3 bg-gradient-to-r from-[#6bff8f]/20 to-transparent text-[#6bff8f] border-l-4 border-[#6bff8f] font-bold rounded-r-xl font-label group" href="insights.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl font-label group" href="simulation.html">
+<span class="material-symbols-outlined group-hover:text-primary">biotech</span>
+<span>Simulations</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl font-label group" href="profile.html">
+<span class="material-symbols-outlined group-hover:text-primary">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-bold shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-105 active:scale-95 transition-all duration-200 text-sm">
+                Recalculate Impact
+            </button>
+</div>
+</aside>
+<!-- Top Navigation for Mobile -->
+<header class="md:hidden sticky top-0 z-50 bg-[#060e20]/60 backdrop-blur-2xl px-6 py-4 flex justify-between items-center shadow-xl">
+<h1 class="text-xl font-black text-[#6bff8f] font-headline tracking-tight text-shadow-glow">Carbon Ethereal</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen p-6 md:p-12">
+<!-- Header Section -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-primary font-label tracking-widest text-xs uppercase mb-2 block">Ecological intelligence</span>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tighter text-on-background">Smart Suggestions</h2>
+<p class="text-on-surface-variant max-w-xl mt-4 text-lg">AI-powered pathways to neutralise your footprint. Based on your recent consumption data across four critical sectors.</p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-highest px-6 py-3 rounded-full glow-border">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-on-surface font-semibold">Session Active: Optimised</span>
+</div>
+</div>
+</header>
+<!-- Insights Bento Grid -->
+<div id="suggestions-grid" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Dynamically populated -->
+</div>
+<!-- Footer Section -->
+<footer class="mt-20 py-12 border-t border-white/10 flex flex-col items-center justify-center gap-6">
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-[#6bff8f] underline-offset-4 hover:underline transition-all font-label text-xs tracking-wider opacity-60" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-[#6bff8f] underline-offset-4 hover:underline transition-all font-label text-xs tracking-wider opacity-60" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-[#6bff8f] underline-offset-4 hover:underline transition-all font-label text-xs tracking-wider opacity-60" href="#">Methodology</a>
+</div>
+<p class="text-slate-500 font-label text-xs tracking-wider opacity-60">© 2024 Carbon Ethereal. Powered by Luminous Stewardship.</p>
+</footer>
+</main>
+<!-- Navigation for Mobile (Bottom Bar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#060e20]/80 backdrop-blur-3xl px-8 py-4 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="dashboard_new.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6bff8f]" href="insights.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="text-[10px] font-label">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="simulation.html">
+<span class="material-symbols-outlined">biotech</span>
+<span class="text-[10px] font-label">Labs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="profile.html">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-label">Profile</span>
+</a>
+</nav>
+<script>
+console.log("PAGE LOADED");
+
+const userId = localStorage.getItem("user_id");
+if (!userId) {
+    window.location.href = "login.html";
+}
+
+const data = JSON.parse(localStorage.getItem("carbonData"));
+
+if (data && data.suggestions) {
+    console.log("Suggestions:", data.suggestions);
+    
+    const grid = document.getElementById('suggestions-grid');
+    
+    const suggestionCards = [
+        {
+            title: "Electrify Your Commute",
+            description: "Your transport emissions account for 42% of your monthly output. Switching to public transit or an EV could reduce your footprint by 2.4 tonnes annually.",
+            icon: "directions_car",
+            large: true,
+            impact: "High"
+        },
+        {
+            title: "Solar Integration",
+            description: "Switching to a renewable energy provider for your home studio can offset peak usage during daytime simulations.",
+            icon: "wb_sunny",
+            large: false,
+            impact: "Medium"
+        },
+        {
+            title: "Plant-Forward Diet",
+            description: "Reducing red meat consumption to twice a week would save approximately 0.8kg of CO2 per meal.",
+            icon: "restaurant",
+            large: false,
+            impact: "Medium"
+        }
+    ];
+    
+    grid.innerHTML = `
+        <div class="md:col-span-8 group relative overflow-hidden rounded-2xl glass-card p-8 border border-white/5 flex flex-col justify-between min-h-[400px]">
+            <div class="relative z-10">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-4xl">directions_car</span>
+                    </div>
+                    <span class="px-4 py-1.5 rounded-full bg-error-container/20 text-error-dim border border-error-container/30 text-xs font-bold uppercase tracking-wider">Impact: High</span>
+                </div>
+                <h3 class="text-3xl font-bold font-headline mb-4">Electrify Your Commute</h3>
+                <p class="text-on-surface-variant text-lg max-w-md leading-relaxed">${data.suggestions[0] || 'Reduce your transport emissions with alternative methods.'}</p>
+            </div>
+            <div class="relative z-10 mt-8 flex items-center gap-6">
+                <button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold shadow-lg transition-transform active:scale-95">Explore Options</button>
+                <span class="text-on-surface-variant text-sm flex items-center gap-2">
+                    <span class="material-symbols-outlined text-xs">info</span>
+                    Verified by CarbonTrust
+                </span>
+            </div>
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
+            <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+                <span class="material-symbols-outlined text-[120px] text-primary">commute</span>
+            </div>
+        </div>
+        
+        <div class="md:col-span-4 rounded-2xl glass-card p-8 border border-white/5 flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary text-2xl">wb_sunny</span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-primary-container/20 text-primary-dim border border-primary-container/30 text-[10px] font-bold uppercase tracking-wider">Impact: Medium</span>
+                </div>
+                <h3 class="text-xl font-bold font-headline mb-3">Solar Integration</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed">${data.suggestions[1] || 'Explore renewable energy options for your home.'}</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5">
+                <div class="flex justify-between items-center text-xs font-label text-on-surface-variant uppercase tracking-widest mb-2">
+                    <span>Efficiency Gain</span>
+                    <span class="text-primary">+18%</span>
+                </div>
+                <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full w-[18%]"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="md:col-span-4 rounded-2xl glass-card p-8 border border-white/5">
+            <div class="flex justify-between items-start mb-6">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-secondary text-2xl">restaurant</span>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-primary-container/20 text-primary-dim border border-primary-container/30 text-[10px] font-bold uppercase tracking-wider">Impact: Medium</span>
+            </div>
+            <h3 class="text-xl font-bold font-headline mb-3">Plant-Forward Diet</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">${data.suggestions[2] || 'Consider reducing meat consumption for better environmental impact.'}</p>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-md text-[10px] font-medium border border-white/5">Low-Methane</span>
+                <span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-md text-[10px] font-medium border border-white/5">Seasonal</span>
+            </div>
+        </div>
+        
+        <div class="md:col-span-8 rounded-2xl glass-card p-8 border border-white/5 flex flex-col md:flex-row gap-8 items-center">
+            <div class="md:w-1/3">
+                <div class="relative w-32 h-32 mx-auto">
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+                        <circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="310" stroke-width="8"></circle>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-2xl font-black font-headline text-primary">15%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-2/3">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold font-headline">Conscious Consumption</h3>
+                    <span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant border border-white/5 text-[10px] font-bold uppercase tracking-wider">Impact: Low</span>
+                </div>
+                <p class="text-on-surface-variant text-sm leading-relaxed">${data.suggestions[3] || 'Your lifestyle segment can be optimized for better efficiency.'}</p>
+                <button class="mt-4 text-primary text-sm font-bold flex items-center gap-2 hover:underline underline-offset-4 transition-all">
+                    View Detailed Breakdown <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    `;
+}
+</script>
+</body></html>

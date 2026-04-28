@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Ethereal | Luminous Stewardship</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#6bff8f",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#091328",
+                        "on-tertiary-container": "#005a3c",
+                        "on-primary-fixed-variant": "#006a2d",
+                        "on-secondary": "#005f2e",
+                        "primary-dim": "#5bf083",
+                        "surface-tint": "#6bff8f",
+                        "secondary": "#6dfe9c",
+                        "primary-container": "#0abc56",
+                        "outline": "#6d758c",
+                        "surface-container": "#0f1930",
+                        "on-surface-variant": "#a3aac4",
+                        "on-tertiary-fixed-variant": "#006544",
+                        "tertiary-fixed": "#69f6b8",
+                        "surface-bright": "#1f2b49",
+                        "tertiary-fixed-dim": "#58e7ab",
+                        "primary-fixed-dim": "#5bf083",
+                        "tertiary-container": "#69f6b8",
+                        "primary-fixed": "#6bff8f",
+                        "on-secondary-container": "#e3ffe4",
+                        "on-primary": "#005f28",
+                        "secondary-fixed": "#6dfe9c",
+                        "secondary-fixed-dim": "#5def8f",
+                        "error-dim": "#d53d18",
+                        "surface-container-high": "#141f38",
+                        "error": "#ff7351",
+                        "on-tertiary": "#006443",
+                        "on-error": "#450900",
+                        "error-container": "#b92902",
+                        "background": "#060e20",
+                        "surface-dim": "#060e20",
+                        "secondary-container": "#006d36",
+                        "on-surface": "#dee5ff",
+                        "surface-container-highest": "#192540",
+                        "on-secondary-fixed-variant": "#006a34",
+                        "on-error-container": "#ffd2c8",
+                        "surface-variant": "#192540",
+                        "inverse-surface": "#faf8ff",
+                        "secondary-dim": "#5def8f",
+                        "on-primary-container": "#002c0f",
+                        "on-tertiary-fixed": "#00452d",
+                        "on-background": "#dee5ff",
+                        "on-secondary-fixed": "#004a22",
+                        "on-primary-fixed": "#004a1d",
+                        "surface": "#060e20",
+                        "tertiary-dim": "#58e7ab",
+                        "tertiary": "#9bffce",
+                        "inverse-primary": "#006e2f",
+                        "outline-variant": "#40485d",
+                        "inverse-on-surface": "#4d556b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(107, 255, 143, 0.2);
+        }
+        input[type='range'] {
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            height: 4px;
+            border-radius: 2px;
+        }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #6bff8f;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(107, 255, 143, 0.5);
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#060e20] flex flex-col py-8 space-y-6 shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-50 font-['Manrope'] font-medium">
+<div class="px-8">
+<h1 class="text-xl font-bold text-[#6bff8f]">Carbon Ethereal</h1>
+<p class="text-[10px] tracking-widest uppercase opacity-40 mt-1">Luminous Stewardship</p>
+</div>
+<nav class="flex-1 space-y-2 px-4 mt-8">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-[#6bff8f]/20 to-transparent text-[#6bff8f] border-l-4 border-[#6bff8f] font-bold ease-out duration-200" href="dashboard_new.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="analytics.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="insights.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="simulation.html">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Simulations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors ease-out duration-200" href="profile.html">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="px-6">
+<button class="w-full py-4 rounded-2xl bg-primary text-on-primary font-bold shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-[1.02] active:scale-95 transition-all" onclick="updateUI()">
+                Recalculate Impact
+            </button>
+</div>
+</aside>
+<main class="ml-64 min-h-screen relative">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-40 bg-[#060e20]/60 backdrop-blur-2xl flex justify-between items-center px-8 py-4 shadow-xl">
+<div class="flex items-center gap-4">
+<h2 class="font-headline text-2xl font-extrabold tracking-tight text-[#6bff8f]">Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-white/5 border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary w-64" placeholder="Search insights..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-slate-400">
+<button class="material-symbols-outlined hover:text-[#6bff8f] transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined hover:text-[#6bff8f] transition-all" data-icon="settings">settings</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/30 p-0.5 overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYfh4_-owC1cY5ct6luBGK2ZsWH3C4dkcqxL_9W9OZn-Em12S31baVHX3eNlSJ5WF6RZdgWQ4-oYc9AOxiFIaeDkOyTkYOCiPch0Ruhbpx1VDQyPSBdyAlZbT63I2213GRfw9I9qduKq2sNPBCRqnHPnfq5GceZOwXzC8A8UEkJF061hj_6G9YvsMAelNLR0a4nrEb_rsYazXV7GIWBQjlhYKz2QNk0dLvItAS4pMJ5ZgNH8znNQbQ3iRqPpr7kJ_OSzh22dj9-9Nh"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="p-8 space-y-8">
+<!-- Hero Section: Primary Metric -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Total CO2 Card -->
+<div class="md:col-span-2 glass-panel rounded-2xl p-8 flex flex-col justify-between min-h-[280px]">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Total Carbon Footprint</p>
+<h3 id="total-co2" class="text-6xl font-black font-headline tracking-tighter text-primary">0.0</h3>
+<p class="text-sm text-on-surface-variant mt-2">kg CO2 equivalent</p>
+</div>
+<span id="score-badge" class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Loading...</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10">
+<p id="prediction-text" class="text-sm text-on-surface-variant">Monthly projection will appear here</p>
+</div>
+</div>
+<!-- Monthly Forecast -->
+<div class="bg-primary/10 border border-primary/20 rounded-2xl p-6 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="font-headline font-bold text-primary">Monthly Forecast</h4>
+</div>
+<p id="forecast-text" class="text-sm text-slate-300 mb-4">Maintaining current settings...</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Trend Line</span>
+<span class="text-[10px] uppercase font-bold text-primary tracking-wider">Real-time</span>
+</div>
+</div>
+</section>
+<!-- Input Controls Section -->
+<section class="glass-panel rounded-2xl p-8 space-y-8">
+<h4 class="font-headline font-bold text-xl text-on-surface">Daily Activity Metrics</h4>
+<!-- Transport Slider -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold text-on-surface">Transport (km/day)</label>
+<span id="transport-val" class="text-on-surface-variant text-sm">0 km</span>
+</div>
+<input id="transport-slider" type="range" min="0" max="100" value="15" class="w-full" oninput="updateUI()"/>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>0 km</span>
+<span>100 km</span>
+</div>
+</div>
+<!-- Electricity Slider -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold text-on-surface">Electricity (kWh/day)</label>
+<span id="electricity-val" class="text-on-surface-variant text-sm">0 kWh</span>
+</div>
+<input id="electricity-slider" type="range" min="0" max="50" value="10" class="w-full" oninput="updateUI()"/>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>0 kWh</span>
+<span>50 kWh</span>
+</div>
+</div>
+<!-- Shopping Slider -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold text-on-surface">Shopping Spend ($/day)</label>
+<span id="shopping-val" class="text-on-surface-variant text-sm">$0</span>
+</div>
+<input id="shopping-slider" type="range" min="0" max="500" value="100" class="w-full" oninput="updateUI()"/>
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>$0</span>
+<span>$500</span>
+</div>
+</div>
+<!-- Diet Selection -->
+<div class="space-y-4 pt-4">
+<label class="text-sm font-semibold text-on-surface">Primary Diet Type</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="diet-btn rounded-lg px-4 py-3 font-semibold transition-all bg-primary/10 text-primary border border-primary/20" data-type="veg" onclick="updateUI()">🥗 Vegetarian</button>
+<button class="diet-btn rounded-lg px-4 py-3 font-semibold transition-all bg-white/5 text-slate-400 border border-white/5" data-type="mixed" onclick="updateUI()">🍗 Mixed</button>
+<button class="diet-btn rounded-lg px-4 py-3 font-semibold transition-all bg-white/5 text-slate-400 border border-white/5" data-type="non-veg" onclick="updateUI()">🥩 Meat</button>
+</div>
+</div>
+</section>
+<!-- Insights & Breakdown Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Breakdown Card -->
+<div class="glass-panel rounded-2xl p-6">
+<h5 class="font-headline font-bold mb-6">Emission Breakdown</h5>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-400">Transportation</span>
+<span id="transport-pct" class="text-primary font-bold">0%</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div id="transport-bar" class="h-full bg-primary rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-400">Electricity</span>
+<span id="electricity-pct" class="text-tertiary font-bold">0%</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div id="electricity-bar" class="h-full bg-tertiary rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-400">Diet</span>
+<span id="diet-pct" class="text-secondary font-bold">0%</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div id="diet-bar" class="h-full bg-secondary rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-400">Consumption</span>
+<span id="shopping-pct" class="text-tertiary-fixed-dim font-bold">0%</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div id="shopping-bar" class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 25%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggestions Card -->
+<div class="glass-panel rounded-2xl p-6">
+<h5 class="font-headline font-bold mb-6">Smart Suggestions</h5>
+<div id="suggestions-container" class="space-y-3 text-sm">
+<p class="text-slate-400">Suggestions will appear here based on your data...</p>
+</div>
+</div>
+</section>
+<!-- Bottom Bento Row -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group">
+<div>
+<span class="material-symbols-outlined text-slate-400 mb-4 group-hover:text-primary" data-icon="forest">forest</span>
+<h5 class="font-headline font-bold">Offset Strategy</h5>
+<p class="text-xs text-slate-500 mt-2">Recommended: 12 tree plantings per quarter to neutralize transport.</p>
+</div>
+<span class="material-symbols-outlined self-end text-slate-600 group-hover:text-primary transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group">
+<div>
+<span class="material-symbols-outlined text-slate-400 mb-4 group-hover:text-primary" data-icon="lightbulb">lightbulb</span>
+<h5 class="font-headline font-bold">Smart Insights</h5>
+<p class="text-xs text-slate-500 mt-2">Switching to LED bulbs could reduce your household energy by 14%.</p>
+</div>
+<span class="material-symbols-outlined self-end text-slate-600 group-hover:text-primary transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group">
+<div>
+<span class="material-symbols-outlined text-slate-400 mb-4 group-hover:text-primary" data-icon="group">group</span>
+<h5 class="font-headline font-bold">Community Leaderboard</h5>
+<p class="text-xs text-slate-500 mt-2">You are ranked #14 in your local green committee.</p>
+</div>
+<span class="material-symbols-outlined self-end text-slate-600 group-hover:text-primary transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 mt-20 border-t border-white/10 flex flex-col items-center justify-center gap-4">
+<p class="font-['Inter'] text-xs tracking-wider opacity-60 text-slate-500">© 2024 Carbon Ethereal. Powered by Luminous Stewardship.</p>
+<div class="flex gap-6">
+<a class="text-slate-500 text-[10px] uppercase font-bold hover:text-[#6bff8f] transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 text-[10px] uppercase font-bold hover:text-[#6bff8f] transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 text-[10px] uppercase font-bold hover:text-[#6bff8f] transition-all" href="#">Methodology</a>
+</div>
+</footer>
+</main>
+<script>
+const transportSlider = document.getElementById('transport-slider');
+const electricitySlider = document.getElementById('electricity-slider');
+const shoppingSlider = document.getElementById('shopping-slider');
+const totalCo2 = document.getElementById('total-co2');
+const transportVal = document.getElementById('transport-val');
+const electricityVal = document.getElementById('electricity-val');
+const shoppingVal = document.getElementById('shopping-val');
+const dietBtns = document.querySelectorAll('.diet-btn');
+const scoreBadge = document.getElementById('score-badge');
+const suggestionsContainer = document.getElementById('suggestions-container');
+const forecastText = document.getElementById('forecast-text');
+const predictionText = document.getElementById('prediction-text');
+
+let currentDiet = 'veg';
+
+async function updateUI() {
+    console.log("UPDATE TRIGGERED");
+    
+    const userId = localStorage.getItem("user_id");
+    const transport = parseFloat(transportSlider.value);
+    const electricity = parseFloat(electricitySlider.value);
+    const shopping = parseFloat(shoppingSlider.value);
+
+    transportVal.innerText = `${transport} km`;
+    electricityVal.innerText = `${electricity} kWh`;
+    shoppingVal.innerText = `$${shopping}`;
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/calculate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: userId,
+                transport_km: transport,
+                electricity_kwh: electricity,
+                shopping_spend: shopping,
+                diet_type: currentDiet
+            })
+        });
+
+        const data = await response.json();
+        console.log("BACKEND RESPONSE:", data);
+
+        totalCo2.innerText = data.total.toFixed(2);
+        scoreBadge.innerText = data.score;
+
+        if (data.suggestions && Array.isArray(data.suggestions)) {
+            suggestionsContainer.innerHTML = data.suggestions.map(s => `<p class="text-sm text-on-surface-variant">• ${s}</p>`).join('');
+        }
+
+        if (data.prediction) {
+            predictionText.innerText = data.prediction;
+            forecastText.innerText = `Maintaining these settings will result in ${(data.total * 30).toFixed(1)}kg total impact this month.`;
+        }
+
+        const breakdown = data.breakdown;
+        const total = data.total;
+        
+        if (total > 0) {
+            const transportPct = (breakdown.transport / total * 100).toFixed(0);
+            const electricityPct = (breakdown.electricity / total * 100).toFixed(0);
+            const dietPct = (breakdown.diet / total * 100).toFixed(0);
+            const shoppingPct = (breakdown.shopping / total * 100).toFixed(0);
+
+            document.getElementById('transport-pct').innerText = transportPct + '%';
+            document.getElementById('electricity-pct').innerText = electricityPct + '%';
+            document.getElementById('diet-pct').innerText = dietPct + '%';
+            document.getElementById('shopping-pct').innerText = shoppingPct + '%';
+
+            document.getElementById('transport-bar').style.width = transportPct + '%';
+            document.getElementById('electricity-bar').style.width = electricityPct + '%';
+            document.getElementById('diet-bar').style.width = dietPct + '%';
+            document.getElementById('shopping-bar').style.width = shoppingPct + '%';
+        }
+
+        localStorage.setItem("carbonData", JSON.stringify(data));
+
+    } catch (error) {
+        console.error("API ERROR:", error);
+    }
+}
+
+dietBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        dietBtns.forEach(b => {
+            b.classList.remove('bg-primary/10', 'text-primary', 'border-primary/20');
+            b.classList.add('bg-white/5', 'text-slate-400', 'border-white/5');
+        });
+        btn.classList.remove('bg-white/5', 'text-slate-400', 'border-white/5');
+        btn.classList.add('bg-primary/10', 'text-primary', 'border-primary/20');
+        currentDiet = btn.dataset.type;
+        updateUI();
+    });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    console.log("PAGE LOADED");
+    const userId = localStorage.getItem('user_id');
+    if (!userId) {
+        window.location.href = "login.html";
+    }
+    updateUI();
+});
+</script>
+</body></html>

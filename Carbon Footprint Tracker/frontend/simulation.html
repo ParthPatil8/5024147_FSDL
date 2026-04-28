@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Ethereal | Simulations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#6bff8f",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#091328",
+                        "on-tertiary-container": "#005a3c",
+                        "on-primary-fixed-variant": "#006a2d",
+                        "on-secondary": "#005f2e",
+                        "primary-dim": "#5bf083",
+                        "surface-tint": "#6bff8f",
+                        "secondary": "#6dfe9c",
+                        "primary-container": "#0abc56",
+                        "outline": "#6d758c",
+                        "surface-container": "#0f1930",
+                        "on-surface-variant": "#a3aac4",
+                        "on-tertiary-fixed-variant": "#006544",
+                        "tertiary-fixed": "#69f6b8",
+                        "surface-bright": "#1f2b49",
+                        "tertiary-fixed-dim": "#58e7ab",
+                        "primary-fixed-dim": "#5bf083",
+                        "tertiary-container": "#69f6b8",
+                        "primary-fixed": "#6bff8f",
+                        "on-secondary-container": "#e3ffe4",
+                        "on-primary": "#005f28",
+                        "secondary-fixed": "#6dfe9c",
+                        "secondary-fixed-dim": "#5def8f",
+                        "error-dim": "#d53d18",
+                        "surface-container-high": "#141f38",
+                        "error": "#ff7351",
+                        "on-tertiary": "#006443",
+                        "on-error": "#450900",
+                        "error-container": "#b92902",
+                        "background": "#060e20",
+                        "surface-dim": "#060e20",
+                        "secondary-container": "#006d36",
+                        "on-surface": "#dee5ff",
+                        "surface-container-highest": "#192540",
+                        "on-secondary-fixed-variant": "#006a34",
+                        "on-error-container": "#ffd2c8",
+                        "surface-variant": "#192540",
+                        "inverse-surface": "#faf8ff",
+                        "secondary-dim": "#5def8f",
+                        "on-primary-container": "#002c0f",
+                        "on-tertiary-fixed": "#00452d",
+                        "on-background": "#dee5ff",
+                        "on-secondary-fixed": "#004a22",
+                        "on-primary-fixed": "#004a1d",
+                        "surface": "#060e20",
+                        "tertiary-dim": "#58e7ab",
+                        "tertiary": "#9bffce",
+                        "inverse-primary": "#006e2f",
+                        "outline-variant": "#40485d",
+                        "inverse-on-surface": "#4d556b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #060e20; color: #dee5ff; font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(107, 255, 143, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(107, 255, 143, 0.3);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: rgba(109, 117, 140, 0.2);
+            height: 4px;
+            border-radius: 2px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #6bff8f;
+            margin-top: -6px;
+            box-shadow: 0 0 10px rgba(107, 255, 143, 0.5);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#060e20] flex flex-col py-8 space-y-6 font-['Manrope'] font-medium shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-40">
+<div class="px-6 space-y-1">
+<h1 class="text-xl font-bold text-[#6bff8f]">Carbon Ethereal</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500">Luminous Stewardship</p>
+</div>
+<nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl" href="dashboard_new.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl" href="analytics.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl" href="insights.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#6bff8f]/20 to-transparent text-[#6bff8f] border-l-4 border-[#6bff8f] font-bold ease-out duration-200 rounded-r-xl" href="simulation.html">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Simulations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-white/5 transition-colors rounded-xl" href="profile.html">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-full text-sm flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+                Recalculate Impact
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-[#060e20]/60 backdrop-blur-2xl flex justify-between items-center px-8 py-4 shadow-xl">
+<div class="flex items-center gap-4">
+<span class="font-['Manrope'] font-extrabold tracking-tight text-2xl text-[#6bff8f] drop-shadow-[0_0_10px_rgba(107,255,143,0.3)]">Simulations</span>
+<div class="hidden md:flex gap-4 ml-8">
+<span class="px-4 py-2 bg-white/5 rounded-full text-xs font-semibold text-on-surface-variant">Last Updated: 2 mins</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-400">
+<button class="material-symbols-outlined hover:text-[#6bff8f] transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined hover:text-[#6bff8f] transition-all" data-icon="settings">settings</button>
+</div>
+</header>
+<!-- Main Container -->
+<div class="flex-1 p-8 space-y-8 overflow-y-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Input Controls -->
+<div class="lg:col-span-1 space-y-8">
+<!-- Grid Renewable Percentage -->
+<div class="glass-panel p-6 rounded-2xl space-y-4">
+<label class="text-sm font-semibold">Renewable Energy Mix</label>
+<input class="w-full" id="renewable-slider" max="100" min="0" type="range" value="85"/>
+<div class="flex justify-between text-[10px] text-slate-500 uppercase tracking-widest">
+<span>Grid Default</span>
+<span>100% Green</span>
+</div>
+</div>
+<!-- Transport Simulation -->
+<div class="glass-panel p-6 rounded-2xl space-y-4">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold">Air Travel Frequency</label>
+<div class="flex gap-2">
+<button class="h-8 w-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span id="air-travel-val" class="px-4 py-1 bg-surface-container-highest rounded-lg text-sm font-mono flex items-center">2</span>
+<button class="h-8 w-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-white/5 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<p class="text-[10px] text-slate-500 leading-relaxed">International flights per year. Current baseline: 4 flights.</p>
+</div>
+<!-- Toggle Controls -->
+<div class="glass-panel p-6 rounded-2xl space-y-4 pt-4">
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="electric_car">electric_car</span>
+<span class="text-sm">EV Transition</span>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+<span class="text-sm">Plant-Based Diet</span>
+</div>
+<button class="w-12 h-6 bg-slate-700 rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-slate-400 rounded-full"></div>
+</button>
+</div>
+</div>
+</div>
+<div class="relative h-64 rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Wind turbines" class="w-full h-full object-cover" data-alt="clean energy wind turbines on a green rolling hill at dawn with soft atmospheric mist and a low sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXe-MfwAPPOZJOEudHsGAp7J3KMEkRzLPTBo8CfiwrTYTIdYIfmtbkCcGS8Svb3lQcmHWJkyb2CyVRdwwQuz00CZxypO5oQGNM-26NzWv6Di9P7DfNdfRcMQjFeNlbBxknvfmOaii7HLQHsK8wgVoO_x07F2iUT0V9wIVxrkKSbqWxpwP2icdunQNVzyhvkSaGQu3NYuzkz8YHK4PyHTEu27Xls5c90nDhCW-QZTZCvAYbAlzA0ymQ5Tqxf79LyoafIE15dZ2MpkB-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h4 class="font-bold text-lg">Local Grid Optimization</h4>
+<p class="text-xs text-slate-300">Switching to wind can reduce local output by 40%</p>
+</div>
+</div>
+</div>
+<!-- Right Columns: Visualization & Comparison -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Main Chart Section -->
+<div class="glass-panel p-8 rounded-2xl space-y-8 min-h-[500px] flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-['Manrope'] font-bold text-2xl">Real-time Comparative Analysis</h3>
+<p class="text-sm text-slate-400">Projected annual reduction based on current simulation</p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center gap-2 text-xs font-semibold px-3 py-1 bg-white/5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-slate-500"></span> Current
+                                </span>
+<span class="flex items-center gap-2 text-xs font-semibold px-3 py-1 bg-primary/10 rounded-full border border-primary/20 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#6bff8f]"></span> Simulated
+                                </span>
+</div>
+</div>
+<!-- Data Visualization Area (Simulated Chart) -->
+<div class="flex-1 w-full flex items-end justify-between gap-4 pt-10 pb-4">
+<!-- Chart Bar 1 -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full flex items-end justify-center gap-1 h-64">
+<div class="w-1/3 bg-slate-700/50 rounded-t-lg h-full"></div>
+<div class="w-1/3 bg-primary/80 rounded-t-lg h-[60%] shadow-[0_0_20px_rgba(107,255,143,0.2)] transition-all duration-700"></div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">Housing</span>
+</div>
+<!-- Chart Bar 2 -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full flex items-end justify-center gap-1 h-64">
+<div class="w-1/3 bg-slate-700/50 rounded-t-lg h-[80%]"></div>
+<div class="w-1/3 bg-primary/80 rounded-t-lg h-[35%] shadow-[0_0_20px_rgba(107,255,143,0.2)] transition-all duration-700"></div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">Travel</span>
+</div>
+<!-- Chart Bar 3 -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full flex items-end justify-center gap-1 h-64">
+<div class="w-1/3 bg-slate-700/50 rounded-t-lg h-[65%]"></div>
+<div class="w-1/3 bg-primary/80 rounded-t-lg h-[55%] shadow-[0_0_20px_rgba(107,255,143,0.2)] transition-all duration-700"></div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">Food</span>
+</div>
+<!-- Chart Bar 4 -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full flex items-end justify-center gap-1 h-64">
+<div class="w-1/3 bg-slate-700/50 rounded-t-lg h-[45%]"></div>
+<div class="w-1/3 bg-primary/80 rounded-t-lg h-[20%] shadow-[0_0_20px_rgba(107,255,143,0.2)] transition-all duration-700"></div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">Goods</span>
+</div>
+<!-- Chart Bar 5 -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full flex items-end justify-center gap-1 h-64">
+<div class="w-1/3 bg-slate-700/50 rounded-t-lg h-[30%]"></div>
+<div class="w-1/3 bg-primary/80 rounded-t-lg h-[25%] shadow-[0_0_20px_rgba(107,255,143,0.2)] transition-all duration-700"></div>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-500">Services</span>
+</div>
+</div>
+</div>
+<!-- Recommendation Banner -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-panel p-6 rounded-2xl flex items-center gap-6 border-l-4 border-primary">
+<div class="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Transport Reduction Potential</h4>
+<p id="whatif-savings" class="text-sm text-slate-400 leading-snug">Reducing transport by 50% could save 0.0 kg CO2 annually.</p>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex items-center gap-6">
+<div class="h-16 w-16 rounded-full bg-secondary-container/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="trending_down">trending_down</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Tipping Point</h4>
+<p class="text-sm text-slate-400 leading-snug">You are 15% away from reaching a "Net Zero" personal balance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 mt-20 border-t border-white/10 flex flex-col items-center justify-center gap-4 font-['Inter'] text-xs tracking-wider opacity-60">
+<div class="flex gap-8 text-slate-500">
+<a class="hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-[#6bff8f] underline-offset-4 hover:underline transition-opacity" href="#">Methodology</a>
+</div>
+<p>© 2024 Carbon Ethereal. Powered by Luminous Stewardship.</p>
+</footer>
+</main>
+<script>
+console.log("PAGE LOADED");
+
+const userId = localStorage.getItem("user_id");
+if (!userId) {
+    window.location.href = "login.html";
+}
+
+const data = JSON.parse(localStorage.getItem("carbonData"));
+
+if (data && data.what_if) {
+    console.log("Simulation:", data.what_if);
+    
+    const whatifElement = document.getElementById('whatif-savings');
+    whatifElement.innerText = `Reducing transport by 50% could save ${data.what_if.co2_saved} kg CO2 annually.`;
+}
+</script>
+</body></html>
